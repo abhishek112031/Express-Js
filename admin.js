@@ -1,15 +1,25 @@
 const express=require('express');
 const router=express.Router();
+const path=require('path');
 
-router.get('/app-product',(req,res,next)=>{
+router.get('/add-product',(req,res,next)=>{
    
-    res.send( '<form action="/product" method="POST"><input type="text" name="title"><input type="number" name="size"><button type="submit">Add Product</button></form>');
+    res.sendFile(path.join(__dirname,'../','views-styling','add-product.html'))
 });
 
-router.post('/product',(req,res,next)=>{
+router.post('/add-product',(req,res,next)=>{
     console.log(req.body);
     res.redirect('/');
 });
+
+router.get('/contactus',(req,res,next)=>{
+    res.sendFile(path.join(__dirname,'../','views-styling','contactus.html'))
+})
+
+router.post('/contactus',(req,res,next)=>{
+    console.log(req.body);
+    res.redirect('/success')
+})
 
 module.exports=router;
 

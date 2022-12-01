@@ -1,10 +1,17 @@
 const express=require('express');
 const shopRoute=express.Router();
+const path=require('path');
 
 
 shopRoute.get('/',(req,res,next)=>{
     
-    res.send( '<h1>hi from express</h1>');//send allows us to attach a body,which is a type of any..
+    res.sendFile(path.join(__dirname,'../','views-styling','shop.html'))
 });
+
+shopRoute.get('/success',(req,res,next)=>{
+    
+    res.send("Form successfuly filled");
+});
+
 
 module.exports=shopRoute;

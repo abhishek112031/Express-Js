@@ -1,17 +1,10 @@
 const express=require('express');
-const shopRoute=express.Router();
 const path=require('path');
+const router=express.Router();
 
 
-shopRoute.get('/',(req,res,next)=>{
-    
-    res.sendFile(path.join(__dirname,'../','views-styling','shop.html'))
+router.get('/home',(req,res,next)=>{
+    res.sendFile(path.join(__dirname,'..','views','shop.html'));
 });
 
-shopRoute.get('/success',(req,res,next)=>{
-    
-    res.send("Form successfuly filled");
-});
-
-
-module.exports=shopRoute;
+module.exports=router;

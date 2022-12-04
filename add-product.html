@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+    <title>add-product</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Add Product</a></li>
-                <li><a href="http://localhost:3000/admin/contactus">Contact Us</a></li>
-
-                
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <form action="/admin/add-product" method="POST">
-            <input type="text" name="title" id="">
-            <input type="number" name="size">
-            <button type="submit">Add Product</button>
-        </form>
-    </main>
+    <h1>this is add-product page:</h1>
+    <ul>
+        <li><a href="http://localhost:3000/shop/home">Home</a></li>
+        <li><a href="http://localhost:3000/admin/add-product">Add-Product</a></li>
+        <li><a href="http://localhost:3000/admin/contact-us">Contact us</a></li>
+    </ul>
+    <form action="/admin/add-product" method="POST">
+        <label for="add-product">Add-Product:</label>
+        <input type="text" id="add-product" name="add-product">
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity">
+        <button type="submit">submit</button>
+    </form>
+    
 </body>
 </html>

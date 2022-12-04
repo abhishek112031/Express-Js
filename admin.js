@@ -1,27 +1,21 @@
 const express=require('express');
-const router=express.Router();
 const path=require('path');
+const router=express.Router();
+const bodyParser=require('body-parser');
 
-router.get('/add-product',(req,res,next)=>{
-   
-    res.sendFile(path.join(__dirname,'../','views-styling','add-product.html'))
-});
+const productControllers=require('../controllers/product');
 
-router.post('/add-product',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/');
-});
+//for add-product routes:
+router.get('/add-product',productControllers.getAddProducts);
+router.post('/add-product',productControllers.postAddProducts);
+router.get('/add-product/sucess',productControllers.addProductResponse);
 
-router.get('/contactus',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'../','views-styling','contactus.html'))
-})
 
-router.post('/contactus',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/success')
-})
+//for contact routes:-->
+router.get('/contact-us',productControllers.contactAdmin);
+router.post('/contact-us',productControllers.onPostContact);
+router.get('/contact-us/successful',productControllers.contactResponse);
+
 
 module.exports=router;
-
-
 
